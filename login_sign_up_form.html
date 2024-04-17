@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Metin</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #d6beb0;
+        }
+
+        form {
+            width: 100%;
+            padding: 25px;
+            background-color: #FEECE2;
+            color: black;
+            min-height: 100%;
+
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 20px;
+            background-color: #C62424DB;
+            color: #FEECE2;
+            border-radius: 5px;
+            border: 1px solid;
+            font-weight: bold;
+            transition: .5s linear;
+        }
+
+        button:hover {
+            color: #C62424DB;
+            background: white;
+        }
+
+        hr {
+            background: #000;
+            height: 3px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            line-height: 40px;
+            width: 100%;
+            font-size: large;
+            padding-left: 25px;
+            background-color: #FEECE2;
+            border-radius: 25px
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: #ff6810;
+            color: white;
+            font-size: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: .4s linear;
+        }
+
+        input[type="submit"]:hover{
+            color: #ff6810;
+            background: none;
+            border: 1px solid;
+        }
+        
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #ff6810;
+        }
+        input[type="checkbox"]:checked {
+            outline: 2px solid orange ;
+            outline-width: 5px;
+            outline-offset: 1px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height:98vh;
+            max-width: 400px;
+            margin: auto;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .form {
+            width: 100%;
+            font-size: 25px;
+            border: 1px solid;
+            padding: 2px;
+            min-height: 430px;
+            border-radius: 5px;
+            -webkit-box-shadow: 21px 19px 5px -7px rgba(236, 237, 225, 1);
+            -moz-box-shadow: 21px 19px 5px -7px rgba(236, 237, 225, 1);
+            box-shadow: 21px 19px 5px -7px rgba(236, 237, 225, 1);
+            position: relative;
+            overflow: hidden;
+            background-color: #FEECE2;
+        }
+
+        .form1 {
+            position: absolute;
+            bottom: -130%;
+            transition: .5s;
+            width: 100%;
+            font-size: 25px;
+            border: 1px solid;
+            padding: 2px;
+            min-height: 430px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.175);
+            background-color: #FEECE2;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 5px;
+            background-color: #FEECE2;
+        }
+
+        .mb {
+            margin-bottom: 10px;
+            background: none;
+        }
+
+        .cncl {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 25px;
+        }
+
+        .cncl span {
+            font-size: medium;
+        }
+
+        .cncl a {
+            color: #ff2f0a;
+        }
+
+        .login {
+            width: 100%;
+            text-align: center;
+            border-radius: 200px 200px 0 0;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FEECE2 !important;
+            border: 1px solid;
+            font-size: 40px;
+            color: black;
+            -webkit-box-shadow: 21px 19px 5px -7px rgba(236, 237, 225, 1);
+            -moz-box-shadow: 21px 19px 5px -7px rgba(236, 237, 225, 1);
+            box-shadow: 21px 19px 5px -7px rgba(236, 237, 225, 1);
+            margin-bottom: 1px;
+        }
+
+        .login span {
+            background-color: #FEECE2;
+        }
+
+        .check {
+            background-color: #FEECE2;
+        }
+
+        .sg {
+            filter: drop-shadow(15px 10px 4px rgba(236, 237, 225, 1));
+            background: none;
+            cursor: pointer;
+            padding: 0px 25px;
+        }
+
+        .sign {
+            background: none;
+            background-color: rgba(0, 0, 0, 0);
+            clip-path: polygon(0% 0%, 0 100%, 50% 56%, 99% 100%, 100% 0);
+            width: 74px;
+            height: 94px;
+            background-color: #C62424DB;
+            transition: .5s;
+        }
+
+        .sg:hover .sign {
+            height: 110px;
+        }
+
+        .shape {
+            display: flex;
+        }
+
+        #click {
+            background: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="login">
+            <span id="log_txt">Login Form</span>
+        </div>
+        <div class="form" style="display: inline-block;">
+            <form method="post" id="frm">
+                <div class="mb">
+                    <label for="..." class="label">Username</label>
+                    <input type="text" name="Username" id="" placeholder="Enter Username">
+                </div>
+                <div class="mb">
+                    <label for="..." class="label">Password</label>
+                    <input type="password" name="password" id="" placeholder="Enter Password">
+                </div>
+                <div class="check mb">
+                    <input type="checkbox" name="" id="">
+                    <label for="..." style="background: none;">Remember Me</label>
+                </div>
+                <div class="mb">
+                    <input type="submit" name="login" id="" value="Login">
+                </div>
+            </form>
+            <div class="cncl">
+                <button>Cancel</button>
+                <span> Forgot <a href="#">Password?</a></span>
+            </div>
+
+            <div class="form1">
+                <form action="..." method="post">
+                    <div class="mb">
+                        <label for="..." class="label">Username</label>
+                        <input type="text" name="Username" id="" placeholder="Enter Username">
+                    </div>
+                    <div class="mb">
+                        <label for="..." class="label">E-Mail</label>
+                        <input type="text" name="email" id="" placeholder="Enter E-Mail">
+                    </div>
+                    <div class="mb">
+                        <label for="..." class="label">Password</label>
+                        <input type="password" name="password" id="" placeholder="Enter Password">
+                    </div>
+                    <div class="check mb">
+                        <input type="checkbox" name="" id="">
+                        <label for="..." style="font-size: 20px;background: none;"> Terms of Service and Privacy
+                            Policy</label>
+                    </div>
+                    <div class="mb">
+                        <input type="submit" name="signup" id="" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="shape">
+            <div class="sg" onclick="run()">
+                <div class="sign">
+                    <span id="click">
+                        Sign Up
+                    </span>
+                </div>
+            </div>
+            <div class="sg" onclick="run1()">
+                <div class="sign">
+                    <span id="click">
+                        Login
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const form = document.querySelector("#frm");
+        const form1 = document.querySelector(".form1");
+        const form2 = document.querySelector(".form");
+        const cncl = document.querySelector(".cncl");
+        const sign = document.querySelectorAll(".sign")[1];
+        const log_txt = document.querySelector("#log_txt");
+
+        function run() {
+            console.log(form.style.display);
+            if (form2.style.display == "inline-block") {
+                form2.style.padding = "0px";
+                form2.style.border = "1px solid";
+                form1.style.border = "none";
+                form.style.display = "none";
+                form1.style.bottom = "0%";
+                cncl.style.display = "none";
+                log_txt.innerHTML = "Sign Up";
+            }
+        }
+        function run1() {
+            form2.style.padding = "2px";
+            form2.style.border = "1px solid";
+            form.style.display = "inline-block";
+            form1.style.bottom = "-130%";
+            cncl.style.display = "flex";
+            log_txt.innerHTML = "Login Form";
+        }
+    </script>
+</body>
+
+</html>
