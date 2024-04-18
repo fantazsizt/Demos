@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mustafa metin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+        }
+
+        body {
+            background: #f1f1f1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            padding: 2px 0px;
+            background: #4f4f4f;
+
+            border: 1px solid #6f6f6f;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 175);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        hr {
+            width: 100%;
+            color: rgb(128, 128, 128);
+            margin: 4px 0px;
+        }
+
+        form div {
+            padding: 1px 4px;
+        }
+
+        input[type=text] {
+            line-height: 52px;
+            color: white;
+            border: none;
+            margin-bottom: 5px;
+            background: #4f4f4f;
+            font-size: 25px;
+            text-align: end;
+        }
+
+        input[type=button] {
+            padding: 10px 15px;
+            margin: 1px 0;
+            font-size: 15px;
+            border: none;
+            background: #6f6f6f;
+            color: white;
+            font-weight: bold;
+            width: 60px;
+        }
+
+        input[type=button]:hover {
+            background: #3b3b3b;
+        }
+
+        #text {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+
+        a {
+            padding: 10px 15px;
+            margin: 2px 0px;
+            border: none;
+            background: #4f4f4f;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+
+        }
+
+        a:hover {
+            background: #3b3b3b;
+        }
+
+        .blck{
+            background: #242020 !important;
+        }
+        .blck:hover{
+            background: #6f6f6f !important;
+        }
+
+        .tri {
+            position: relative;
+        }
+
+        .dropTri {
+            position: absolute;
+            display: none;
+        }
+
+        .dropTri1{
+            position: absolute;
+            left: 0px;
+            display: none;
+        }
+
+        .dropTri input[type=button] {
+            display: block;
+            width: 200px;
+            height: auto;
+            background: #000000;
+            border: none;
+        }
+
+        .dropTri1 input[type=button]{
+            display: block;
+            width: 100px;
+            height: auto;
+            background: #000000;
+            border: none;
+            
+        }
+        .dropTri1 input[type=button]:hover {
+            background: #3b3b3b;
+        }
+
+        .dropTri input[type=button]:hover {
+            background: #3b3b3b;
+        }
+
+        .tri:hover .dropTri {
+            display: block;
+            z-index: 1;
+        }
+        .tri:hover .dropTri1 {
+            display: block;
+        }
+
+        #title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+            background: #6f6f6f;
+            padding: 5px 0;
+            position: relative;
+            top: -2px;
+            
+        }
+
+        #title span {
+            display: inline-block;
+            width: 40px;
+            height: 25px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #title span:hover{
+            background: #3b3b3b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form name="form1">
+            <div id="title">
+                <div>Scientific Calculator</div>
+                <div>
+                    <span>-</span>
+                    <span>&#8863;</span>
+                    <span>&#215;</span>
+                </div>
+            </div>
+            <div id="text">
+                <input id="calc" type="text" name="answer" placeholder="0"></input>
+            </div>
+            <hr>
+            <div style="height: 37px;">
+                <a class="tri">&#8895; Trigonometry
+                    <div class="dropTri">
+                        <input type="button" name="input" value="sin" onclick="sin()">
+                        <input type="button" name="input" value="cos" onclick="cos()">
+                        <input type="button" name="input" value="tan" onclick="tan()">
+                        <input type="button" name="input" value="cot" onclick="cot()">
+                    </div>
+                </a>
+                <a class="tri">⨍ Function
+                    <div class="dropTri1">
+                        <input type="button" name="input" value="floor" onclick="floor()">
+                        <input type="button" name="input" value="ceil" onclick="ceil()">
+                        <input type="button" name="input" value="rand" onclick="rand()">
+                    </div>
+                </a>
+            </div>
+            <div>
+                <input type="button" name="input" value="METIN" style="padding-left: 7px;">
+                <input type="button" name="input" value="&#960;"
+                    onclick="form1.answer.value =3.1415926535897932384626433832795">
+                <input type="button" name="input" value="e"
+                    onclick="form1.answer.value =2.7182818284590452353602874713527">
+                <input type="button" name="input" value="C" onclick="form1.answer.value =''">
+                <input type="button" name="input" value="&#8666;" onclick="sil()">
+            </div>
+            <div>
+                <input type="button" name="input" value="x&#178;" onclick="kareAl()">
+                <input type="button" name="input" value="1/x" onclick="form1.answer.value = 1/form1.answer.value">
+                <input type="button" name="input" value="|x|" onclick="mutlak()">
+                <input type="button" name="input" value="exp" onclick="form1.answer.value +='exp'">
+                <input type="button" name="input" value="mod" onclick="form1.answer.value +='%'">
+            </div>
+            <div>
+                <input type="button" name="input" value="&#8730;" onclick="sqrt()">
+                <input type="button" name="input" value="(" onclick="form1.answer.value +='('">
+                <input type="button" name="input" value=")" onclick="form1.answer.value +=')'">
+                <input type="button" name="input" value="n!" onclick="faktoriyel()">
+                <input type="button" name="input" value="&#247;" onclick="form1.answer.value +='/'">
+            </div>
+            <div>
+                <input type="button" name="input" value="xʸ" onclick="form1.answer.value +='**'">
+                <input class="blck" type="button" name="input" value="7" onclick="form1.answer.value +=7">
+                <input class="blck" type="button" name="input" value="8" onclick="form1.answer.value +=8">
+                <input class="blck" type="button" name="input" value="9" onclick="form1.answer.value +=9">
+                <input type="button" name="input" value="&#215;" onclick="form1.answer.value +='*'">
+            </div>
+            <div>
+                <input type="button" name="input" value="10ʸ" onclick="onUs()">
+                <input class="blck" type="button" name="input" value="4" onclick="form1.answer.value +=4">
+                <input class="blck" type="button" name="input" value="5" onclick="form1.answer.value +=5">
+                <input class="blck" type="button" name="input" value="6" onclick="form1.answer.value +=6">
+                <input type="button" name="input" value="-" onclick="form1.answer.value +='-'">
+            </div>
+            <div>
+                <input type="button" name="input" value="log" onclick="log()">
+                <input class="blck" type="button" name="input" value="1" onclick="form1.answer.value +=1">
+                <input class="blck" type="button" name="input" value="2" onclick="form1.answer.value +=2">
+                <input class="blck" type="button" name="input" value="3" onclick="form1.answer.value +=3">
+                <input type="button" name="input" value="+" onclick="form1.answer.value +='+'">
+            </div>
+            <div>
+                <input type="button" name="input" value="ln" onclick="ln()">
+                <input class="blck" type="button" name="input" value="+/-" onclick="artiEksi()">
+                <input class="blck" type="button" name="input" value="0" onclick="form1.answer.value +=0">
+                <input class="blck" type="button" name="input" value="." onclick="form1.answer.value +='.'">
+                <input type="button" name="input" value="=" onclick="form1.answer.value = eval(form1.answer.value)" style="background: #7098e2;">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const inpt = document.querySelector("#calc");
+
+        function mutlak() {
+            if (inpt.value < 0) {
+                inpt.value = inpt.value * (-1);
+            }
+            else {
+                inpt.value = inpt.value;
+            }
+        }
+
+        function sil() {
+            var yeni = inpt.value.slice(0, -1);
+            inpt.value = yeni;
+        }
+
+        function artiEksi() {
+            if (inpt.value < 0) {
+                inpt.value = inpt.value * (-1);
+            }
+            else {
+                inpt.value = inpt.value * (-1);
+            }
+        }
+
+        function faktoriyel() {
+            let deger = inpt.value;
+            let carpim = 1;
+            for (let i = 2; i <= deger; i++) {
+                carpim *= i;
+            }
+            inpt.value = carpim;
+        }
+
+        function log() {
+            inpt.value = Math.log10(inpt.value);
+        }
+        function ln() {
+            inpt.value = Math.log(inpt.value);
+        }
+        function sqrt() {
+            inpt.value = Math.sqrt(inpt.value);
+        }
+        function kareAl() {
+            inpt.value = Math.pow(inpt.value, 2);
+        }
+        function onUs() {
+            inpt.value = Math.pow(10, inpt.value);
+        }
+
+        function sin() {
+            var angle = inpt.value;
+            inpt.value = Math.sin(angle * (Math.PI / 180));
+        }
+        function cos() {
+            var angle = inpt.value;
+            inpt.value = Math.cos(angle * (Math.PI / 180));
+        }
+        function tan() {
+            var angle = inpt.value;
+            inpt.value = Math.tan(angle * (Math.PI / 180));
+        }
+        function cot() {
+            var angle = inpt.value;
+            inpt.value = 1 / Math.tan(angle * (Math.PI / 180));
+        }
+
+        function floor(){
+            inpt.value = Math.floor(inpt.value);
+        }
+        function ceil(){
+            inpt.value = Math.ceil(inpt.value);
+        }
+        function rand(){
+            inpt.value = Math.random();
+        }
+
+    </script>
+</body>
+
+</html>
