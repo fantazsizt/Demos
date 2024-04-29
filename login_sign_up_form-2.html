@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Metin - 21410051006</title>
+
+    <style>
+        body,
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            line-height: 35px;
+            width: 250px;
+            position: relative;
+            padding-left: 10px
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"]:hover {
+            background-color: #ccc;
+        }
+
+        h3 {
+            font-size: 30px;
+            margin: 5px 0;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        h4 a {
+            color: rgb(27, 109, 141);
+            padding-right: 5px;
+        }
+
+        .mb-3 {
+            margin-bottom: 18px;
+        }
+
+        .d-flex-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .d-flex-start {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .text_label {
+            display: block;
+            margin: 5px 0 5px 0;
+        }
+
+        .check_label {
+            display: inline-block;
+            padding-left: 10px;
+            padding-top: 2px;
+        }
+
+        .container {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form_back {
+            background: #d3d3d3;
+            padding: 3px;
+            padding-bottom: 15px;
+            border-radius: 5px;
+            position: absolute;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        }
+
+        .form_back_1 {
+            z-index: -1;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .form-2 {
+            position: relative;
+            right: -400%;
+            top: 0%;
+            z-index: 0;
+            transition: .5s;
+            background: #d3d3d3;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 10px;
+            background: #dc3545;
+            border-radius: 10px;
+            border: 0px;
+            margin: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transition: .5s;
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .sbmt {
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(31, 151, 7);
+            color: white;
+        }
+
+        .log {
+            position: absolute;
+            right: -80.5px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #d3d3d3;
+            border-radius: 0 35px 35px 0;
+            padding: 1px;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        }
+
+        .sign_up {
+            padding: 0px 5px;
+            border-radius: 0 35px 35px 0;
+            text-decoration: none;
+            color: black;
+            display: flex;
+            background: #fff;
+            transition: .3s linear;
+            font-size: 50px;
+        }
+
+        .sign_up_2 {
+            padding: 0px 5px;
+            border-radius: 0 35px 35px 0;
+            text-decoration: none;
+            color: black;
+            display: flex;
+            background: #fff;
+            transition: .3s linear;
+            font-size: 50px;
+        }
+
+        .sign_up:hover {
+            background-color: rgb(196, 196, 196);
+            color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_back">
+            <form action="my.php" method="post" class="form mb-3">
+                <div class="mb-3">
+                    <h3>Login</h3>
+                    <hr>
+                </div>
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter Username" class="text_label">
+                </div>
+                <div class="mb-3">
+                    <label for="pass">Password</label>
+                    <input type="password" placeholder="Enter Password" class="text_label">
+                </div>
+                <div class="mb-3 d-flex-start">
+                    <input type="checkbox">
+                    <label class="check_label">Remember Me</label>
+                </div>
+            </form>
+            <div class="d-flex-between">
+                <button class="btn">CANCEL</button>
+                <h4>Forgot <a href="#">Password?</a></h4>
+            </div>
+            <div class="log">
+                <a href="#" class="sign_up" onclick="run()">☜</a>
+            </div>
+
+        </div>
+        <div class="form_back_1">
+            <form action="#" method="post" class="form-2">
+                <div class="mb-3">
+                    <h3>Sign Up</h3>
+                    <hr>
+                </div>
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter Username" class="text_label">
+                </div>
+                <div class="mb-3">
+                    <label for="pass">Password</label>
+                    <input type="password" placeholder="Enter Password" class="text_label">
+                </div>
+                <div class="mb-3">
+                    <label for="email">E-Mail</label>
+                    <input type="email" placeholder="Enter Password" class="text_label">
+                </div>
+                <div class="mb-3 d-flex-start">
+                    <input type="submit" value="Submit" class="sbmt">
+                </div>
+                <div class="log">
+                    <a href="#" class="sign_up_2" onclick="run1()">☜</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- form2.className = "form-2-new mb-3"; -->
+    <script>
+        const form = document.querySelector(".form");
+        const form_b = document.querySelector(".form_back");
+        const form_b1 = document.querySelector(".form_back_1");
+        const form2 = document.querySelector(".form-2");
+        const sign = document.querySelectorAll(".log")[0];
+        const cncl = document.querySelector(".d-flex-between")
+        function run() {
+            cncl.style.display = "none";
+            form.style.display = "none";
+            form_b.style.background = "none";
+            form_b1.style.zIndex = "0";
+            form2.style.right = "0%";
+            sign.style.display = "none";
+        }
+
+        function run1() {
+            cncl.style.display = "flex";
+            form.style.display = "block";
+            form_b.style.background = "#d3d3d3";
+            form_b1.style.zIndex = "-1";
+            form2.style.right = "-400%";
+            sign.style.display = "inline-block";
+        }
+
+    </script>
+
+</body>
+
+</html>
